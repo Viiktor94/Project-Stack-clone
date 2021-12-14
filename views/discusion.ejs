@@ -1,0 +1,43 @@
+<%- include("templates/header", {webTittle: 'Discusión' }) %>
+
+    <div class="container">
+        <h1>Discusión</h1>
+        <% if (error) { %>
+            <p><%= message %> </p>
+            <a href="/blog" class="btn btn-dark">Volver</a>
+        <% } %>
+
+        <% if (!error) { %>
+           <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= question.question%>
+                        </h5>
+                        <p class="card-text">-<%= question.answer%>
+                        </p>
+                        <form action="">
+                            <input 
+                             type="text"
+                            class="form-control my-2"
+                            name="answer"
+                            placeholder="Agrega tu respuesta"
+                                                        
+                            >
+                            <button class="btn btn-primary">Responder</button>
+
+                        </form>
+                        
+                        <a href="/blog" class="btn btn-primary my-2">Volver</a>
+
+                    </div>
+                
+                </div>
+            </div>
+        <% } %>
+    </div>
+   
+<%- include("templates/footer")%>

@@ -1,0 +1,30 @@
+<%- include("templates/header", {webTittle: 'Blog' }) %>
+
+<div class="container">
+    <a href="/blog/preguntar" class="btn btn-success btn-lg my-4">Crear pregunta</a>
+</div>
+
+    <div class="container">
+
+        <%array = Array.from(arrayQuestions) %> 
+                
+         <% if (array.reverse().length> 0) { %>
+            <% array.forEach(element=> { %>
+                <div class="card">
+                     <div class="card-header">
+                        
+                    </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><%= element.question%> </h5>
+                            <p class="card-text">-<%= element.answer%> </p>
+                            <a href="/blog/<%= element.id  %> " class="btn btn-primary">Ver discusión</a>
+                        </div>
+                    
+                 </div>
+             <% }) %>
+        <% } %>
+                 
+    </div>
+
+<%- include("templates/footer")%>
+

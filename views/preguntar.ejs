@@ -1,0 +1,19 @@
+<%- include("templates/header", {webTittle: 'Crear pregunta' }) %>
+
+    <div class="container">
+        <h1>Crear pregunta</h1>
+        <form action="/blog" method="POST">
+            <input type="text"
+                placeholder="¿Cuál es tu pregunta?"
+                class="form-control my-2"
+                name="question"
+            >
+            <button class="btn btn-success btn-block"
+                    type="submit"
+            >
+                Agregar pregunta
+            </button>
+        </form>
+    </div>
+
+<%- include("templates/footer")%>
